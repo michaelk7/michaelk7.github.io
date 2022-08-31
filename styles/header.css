@@ -5,3 +5,16 @@
 	flex-direction: row;
 	justify-content: space-between;
 }
+
+.name
+{
+	display: flex;
+	align-items: center;
+}
+
+.nameText
+{
+	font-size: 42px;
+	font-weight: bold;
+	color: yellow;
+}
