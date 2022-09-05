@@ -4,17 +4,50 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	background-color: gray;
 }
 
 .name
 {
 	display: flex;
 	align-items: center;
+	margin-left: 32px;
 }
 
 .nameText
 {
 	font-size: 42px;
 	font-weight: bold;
-	color: yellow;
+	color: gold;
+}
+
+.aboutHeader
+{
+	display: flex;
+	align-items: center;
+}
+
+.skillsHeader
+{
+	display: flex;
+	align-items: center;
+}
+
+.projectsHeader
+{
+	display: flex;
+	align-items: center;
+}
+
+.contactHeader
+{
+	display: flex;
+	align-items: center;
+}
+
+.resumeHeader
+{
+	display: flex;
+	align-items: center;
+	margin-right: 32px;
 }

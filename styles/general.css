@@ -1,3 +1,13 @@
+body 
+{ 
+  background: url(../images/cool-background.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 0;
+}
+
 p
 {
   font-family: Roboto, Arial;
@@ -8,9 +18,4 @@ p
 h1
 {
   font-family: Roboto, Arial;
-}
-
-body
-{
-    margin: 0;
 }

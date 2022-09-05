@@ -1,0 +1,32 @@
+.footer
+{
+    display: flex;
+    height: 55px;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: gray;
+    bottom: 0;
+    position: fixed;
+    margin: auto;
+    width: 100%;
+}
+
+.aboutFooter
+{
+    display: flex;
+    align-items: center;
+    margin-left: 32px;
+}
+
+.contactFooter
+{
+    display: flex;
+    align-items: center;
+}
+
+.resumeFooter
+{
+    display: flex;
+    align-items: center;
+    margin-right: 32px;
+}
