@@ -5,13 +5,16 @@
 	flex-direction: row;
 	justify-content: space-between;
 	background-color: gray;
+	position: fixed;
+  	top: 0;
+  	width: 100%;
 }
 
 .name
 {
 	display: flex;
 	align-items: center;
-	margin-left: 32px;
+	margin-left: 100px;
 }
 
 .nameText
@@ -19,6 +22,7 @@
 	font-size: 42px;
 	font-weight: bold;
 	color: gold;
+	text-decoration: none;
 }
 
 .aboutHeader
@@ -27,16 +31,31 @@
 	align-items: center;
 }
 
+.aboutText
+{
+	text-decoration: none;
+}
+
 .skillsHeader
 {
 	display: flex;
 	align-items: center;
 }
 
+.skillsText
+{
+	text-decoration: none;
+}
+
 .projectsHeader
 {
 	display: flex;
 	align-items: center;
+}
+
+.projectsText
+{
+	text-decoration: none;
 }
 
 .contactHeader
