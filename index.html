@@ -3,9 +3,17 @@
 	<head>
 		<title>Michael Kelnar</title>
 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+		<!-- Latest compiled and minified CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
     	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
 		<link rel="stylesheet" type="text/css" href="styles/general.css">
 		<link rel="stylesheet" type="text/css" href="styles/header.css">
@@ -13,7 +21,40 @@
 		<link rel="stylesheet" type="text/css" href="styles/footer.css">
 	</head>
 	<body>
-		<div class="header">
+		<nav class="navbar navbar-light" style="background-color: #874C62;">
+			<!-- Navbar content -->
+			<div class="name">
+				<a href="#homescreenSection"class="nameText">
+					Michael Kelnar
+				</p>
+			</div>
+			<div class="aboutHeader">
+					<a href="#aboutSection" class="aboutText">
+						ABOUT
+					</a>
+			</div>
+			<div class="skillsHeader">
+				<a href="#skillsSection" class="skillsText">
+					SKILLS
+				</a>
+			</div>
+			<div class="projectsHeader">
+				<a href="#projectsSection" class="projectsText">
+					PROJECTS
+				</a>
+			</div>
+			<div class="contactHeader">
+				<a href="#contactSection" class="contactText">
+					CONTACT
+				</a>
+			</div>
+			<div class="resumeHeader">
+				<a href="files/MichaelKelnarResume.pdf" download class="resumeText">
+					RESUME
+				</a>
+			</div>
+		  </nav>
+		<!-- <div class="header">
 			<div class="name">
 				<a href="#homescreenSection"class="nameText">
 					Michael Kelnar
@@ -45,8 +86,8 @@
 				</a>
 			</div>
 			
-		</div>
-
+		</div> -->
+		
 		<div class="homescreen" id="homescreenSection">
 			<img class="profilePic" src="images/profilePic.png" alt="profile picture">
 			<p class="nameHome">
@@ -57,37 +98,54 @@
 			</p>
 		</div>
 
-		<div class="about" id="aboutSection">
-			<p>
-				About me section Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu tristique tortor. Donec ornare commodo mauris, ut condimentum purus porttitor eget. Donec nec interdum enim. Donec venenatis condimentum quam, euismod scelerisque lectus interdum ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam lacinia tellus sed ipsum aliquet eleifend. Curabitur dictum justo at porta maximus. Vivamus suscipit cursus ante, ut laoreet libero. Sed nec risus tempus, consectetur lectus eget, eleifend diam. Aliquam varius porttitor euismod.
+		<div class="container">
+			<div class="row" id="aboutSection">
+				<div class="col">
+					<p>
+						About me section Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu tristique tortor. Donec ornare commodo mauris, ut condimentum purus porttitor eget. Donec nec interdum enim. Donec venenatis condimentum quam, euismod scelerisque lectus interdum ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam lacinia tellus sed ipsum aliquet eleifend. Curabitur dictum justo at porta maximus. Vivamus suscipit cursus ante, ut laoreet libero. Sed nec risus tempus, consectetur lectus eget, eleifend diam. Aliquam varius porttitor euismod.
+		
+						In hac habitasse platea dictumst. Nunc ullamcorper, nulla sed commodo dapibus, eros arcu pharetra risus, et cursus nibh purus nec dolor. Suspendisse cursus magna rutrum vestibulum luctus. Maecenas sodales augue non ex luctus, mattis elementum tellus iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus quis sem sed urna consectetur elementum vel bibendum ipsum. Morbi quis faucibus nunc. Donec bibendum vulputate gravida.
+					</p>
+				</div>
 
-				In hac habitasse platea dictumst. Nunc ullamcorper, nulla sed commodo dapibus, eros arcu pharetra risus, et cursus nibh purus nec dolor. Suspendisse cursus magna rutrum vestibulum luctus. Maecenas sodales augue non ex luctus, mattis elementum tellus iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus quis sem sed urna consectetur elementum vel bibendum ipsum. Morbi quis faucibus nunc. Donec bibendum vulputate gravida.
-				
-				Vestibulum accumsan magna vitae diam fermentum, ac aliquam quam placerat. Morbi lectus tellus, blandit ullamcorper ipsum at, ullamcorper dignissim tellus. Donec tincidunt rhoncus odio, id aliquam diam hendrerit et. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In auctor posuere urna, ut hendrerit urna consequat ac. Proin ligula ex, tristique id dignissim ac, venenatis sit amet nulla. Quisque eget efficitur arcu, sed vulputate arcu. Nam faucibus, augue at porta ultricies, lorem felis placerat eros, eu tempus lorem velit id ipsum. Donec non eros nisl. Etiam pretium mollis vestibulum. Proin molestie erat quis sollicitudin sodales. Nam rhoncus diam eu felis commodo luctus.
-				
-				Vivamus cursus ante sed nibh pretium, porttitor iaculis orci porttitor. Suspendisse blandit ligula non vehicula tempus. Mauris tempor sodales hendrerit. Cras lacinia metus nec sollicitudin luctus. Pellentesque lobortis, nulla nec hendrerit posuere, leo neque interdum purus, a ullamcorper purus sem lacinia diam. Sed semper diam risus, at fringilla purus sagittis tristique. Praesent sed sapien eu massa cursus luctus. Quisque fermentum consectetur tempor. Sed molestie ultrices velit, in lobortis mauris gravida sagittis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum luctus finibus nisi et aliquet. Sed purus mi, hendrerit ut elit nec, egestas faucibus justo. Aenean gravida scelerisque consequat. Vivamus molestie vestibulum arcu a eleifend.
-				
-				Nulla euismod ut purus nec dictum. Vivamus commodo id diam quis cursus. Nullam facilisis dapibus ante. Sed aliquet felis vitae elit ultrices varius. Morbi sit amet augue ex. Suspendisse ultrices odio at odio efficitur lacinia. Duis et placerat lacus, in gravida nibh. Nunc malesuada sed arcu eu gravida. Duis laoreet dui a erat euismod, eu pretium tortor consectetur.
-			</p>
-			<img class="redbullLogo" src="images/Red-Bull-logo.png">
-			<img class="bradleyLogo" src="images/Bradley.jpeg">
+				<div class="col">
+					<img class="redbullLogo" src="images/Red-Bull-logo.png">
+				</div>
+
+				<div class="col">
+					<img class="bradleyLogo" src="images/Bradley.jpeg">
+				</div>
+			</div>
 		</div>
 
-		<div class="skills" id="skillsSection">
-			<p>
-				Skills section Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu tristique tortor. Donec ornare commodo mauris, ut condimentum purus porttitor eget. Donec nec interdum enim. Donec venenatis condimentum quam, euismod scelerisque lectus interdum ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam lacinia tellus sed ipsum aliquet eleifend. Curabitur dictum justo at porta maximus. Vivamus suscipit cursus ante, ut laoreet libero. Sed nec risus tempus, consectetur lectus eget, eleifend diam. Aliquam varius porttitor euismod.
+		<div class="container">
+			<div class="row" id="skillsSection">
+				<div class="col">
+					<p>
+						Skills section Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu tristique tortor. Donec ornare commodo mauris, ut condimentum purus porttitor eget. Donec nec interdum enim. Donec venenatis condimentum quam, euismod scelerisque lectus interdum ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam lacinia tellus sed ipsum aliquet eleifend. Curabitur dictum justo at porta maximus. Vivamus suscipit cursus ante, ut laoreet libero. Sed nec risus tempus, consectetur lectus eget, eleifend diam. Aliquam varius porttitor euismod.
+		
+						In hac habitasse platea dictumst. Nunc ullamcorper, nulla sed commodo dapibus, eros arcu pharetra risus, et cursus nibh purus nec dolor. Suspendisse cursus magna rutrum vestibulum luctus. Maecenas sodales augue non ex luctus, mattis elementum tellus iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus quis sem sed urna consectetur elementum vel bibendum ipsum. Morbi quis faucibus nunc. Donec bibendum vulputate gravida.
+						
+						Vestibulum accumsan magna vitae diam fermentum, ac aliquam quam placerat. Morbi lectus tellus, blandit ullamcorper ipsum at, ullamcorper dignissim tellus. Donec tincidunt rhoncus odio, id aliquam diam hendrerit et. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In auctor posuere urna, ut hendrerit urna consequat ac. Proin ligula ex, tristique id dignissim ac, venenatis sit amet nulla. Quisque eget efficitur arcu, sed vulputate arcu. Nam faucibus, augue at porta ultricies, lorem felis placerat eros, eu tempus lorem velit id ipsum. Donec non eros nisl. Etiam pretium mollis vestibulum. Proin molestie erat quis sollicitudin sodales. Nam rhoncus diam eu felis commodo luctus.
+						
+						Vivamus cursus ante sed nibh pretium, porttitor iaculis orci porttitor. Suspendisse blandit ligula non vehicula tempus. Mauris tempor sodales hendrerit. Cras lacinia metus nec sollicitudin luctus. Pellentesque lobortis, nulla nec hendrerit posuere, leo neque interdum purus, a ullamcorper purus sem lacinia diam. Sed semper diam risus, at fringilla purus sagittis tristique. Praesent sed sapien eu massa cursus luctus. Quisque fermentum consectetur tempor. Sed molestie ultrices velit, in lobortis mauris gravida sagittis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum luctus finibus nisi et aliquet. Sed purus mi, hendrerit ut elit nec, egestas faucibus justo. Aenean gravida scelerisque consequat. Vivamus molestie vestibulum arcu a eleifend.
+						
+						Nulla euismod ut purus nec dictum. Vivamus commodo id diam quis cursus. Nullam facilisis dapibus ante. Sed aliquet felis vitae elit ultrices varius. Morbi sit amet augue ex. Suspendisse ultrices odio at odio efficitur lacinia. Duis et placerat lacus, in gravida nibh. Nunc malesuada sed arcu eu gravida. Duis laoreet dui a erat euismod, eu pretium tortor consectetur.
+					</p>
+				</div>
 
-				In hac habitasse platea dictumst. Nunc ullamcorper, nulla sed commodo dapibus, eros arcu pharetra risus, et cursus nibh purus nec dolor. Suspendisse cursus magna rutrum vestibulum luctus. Maecenas sodales augue non ex luctus, mattis elementum tellus iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus quis sem sed urna consectetur elementum vel bibendum ipsum. Morbi quis faucibus nunc. Donec bibendum vulputate gravida.
-				
-				Vestibulum accumsan magna vitae diam fermentum, ac aliquam quam placerat. Morbi lectus tellus, blandit ullamcorper ipsum at, ullamcorper dignissim tellus. Donec tincidunt rhoncus odio, id aliquam diam hendrerit et. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In auctor posuere urna, ut hendrerit urna consequat ac. Proin ligula ex, tristique id dignissim ac, venenatis sit amet nulla. Quisque eget efficitur arcu, sed vulputate arcu. Nam faucibus, augue at porta ultricies, lorem felis placerat eros, eu tempus lorem velit id ipsum. Donec non eros nisl. Etiam pretium mollis vestibulum. Proin molestie erat quis sollicitudin sodales. Nam rhoncus diam eu felis commodo luctus.
-				
-				Vivamus cursus ante sed nibh pretium, porttitor iaculis orci porttitor. Suspendisse blandit ligula non vehicula tempus. Mauris tempor sodales hendrerit. Cras lacinia metus nec sollicitudin luctus. Pellentesque lobortis, nulla nec hendrerit posuere, leo neque interdum purus, a ullamcorper purus sem lacinia diam. Sed semper diam risus, at fringilla purus sagittis tristique. Praesent sed sapien eu massa cursus luctus. Quisque fermentum consectetur tempor. Sed molestie ultrices velit, in lobortis mauris gravida sagittis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum luctus finibus nisi et aliquet. Sed purus mi, hendrerit ut elit nec, egestas faucibus justo. Aenean gravida scelerisque consequat. Vivamus molestie vestibulum arcu a eleifend.
-				
-				Nulla euismod ut purus nec dictum. Vivamus commodo id diam quis cursus. Nullam facilisis dapibus ante. Sed aliquet felis vitae elit ultrices varius. Morbi sit amet augue ex. Suspendisse ultrices odio at odio efficitur lacinia. Duis et placerat lacus, in gravida nibh. Nunc malesuada sed arcu eu gravida. Duis laoreet dui a erat euismod, eu pretium tortor consectetur.
-			</p>
-			<img class="cPlusPlus" src="images/c-.png">
-			<img class="python" src="images/python.png">
-			<img class="sql" src="images/sql-server.png">
+				<div class="col">
+					<img class="cPlusPlus" src="images/c-.png">
+				</div>
+
+				<div class="col">
+					<img class="python" src="images/python.png">
+				</div>
+
+				<div class="col">
+					<img class="sql" src="images/sql-server.png">
+				</div>
+			</div>
 		</div>
 
 		<div class="projects" id="projectsSection">

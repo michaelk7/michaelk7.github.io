@@ -27,23 +27,8 @@ h1
   font-family: Roboto, Arial;
 }
 
-.profilePic
+#aboutSection
 {
-  margin-left: 45%;
-  margin-top: 100px;
-  margin-bottom: 520px;
-  border-radius: 50%;
-  width: 250px;
-  height: 250px;
-  border-style: solid;
-  border-width: 10px;
-  border-color: white;
-}
-
-.about
-{
-  margin: 50px;
-  margin-bottom: 520px;
   padding: 100px;
 }
 
@@ -61,10 +46,8 @@ h1
   height: 100px;
 }
 
-.skills
+#skillsSection
 {
-  margin: 50px;
-  margin-bottom: 520px;
   padding: 100px;
 }
 
