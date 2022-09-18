@@ -17,7 +17,7 @@
 	margin-left: 100px;
 }
 
-.nameText
+#nameText
 {
 	font-size: 42px;
 	font-weight: bold;
@@ -25,7 +25,7 @@
 	text-decoration: none;
 }
 
-.nameText:hover
+#nameText:hover
 {
 	color: #F2D388;
 }
@@ -36,15 +36,14 @@
 	align-items: center;
 }
 
-.aboutText
+#aboutText
 {
 	text-decoration: none;
 	color: #C98474;
 }
 
-.aboutText:hover
+#aboutText:hover
 {
-	font-weight: bold;
 	color: #F2D388;
 }
 
@@ -54,15 +53,14 @@
 	align-items: center;
 }
 
-.skillsText
+#skillsText
 {
 	text-decoration: none;
 	color: #C98474;
 }
 
-.skillsText:hover
+#skillsText:hover
 {
-	font-weight: bold;
 	color: #F2D388;
 }
 
@@ -72,15 +70,14 @@
 	align-items: center;
 }
 
-.projectsText
+#projectsText
 {
 	text-decoration: none;
 	color: #C98474;
 }
 
-.projectsText:hover
+#projectsText:hover
 {
-	font-weight: bold;
 	color: #F2D388;
 }
 
@@ -90,15 +87,14 @@
 	align-items: center;
 }
 
-.contactText
+#contactText
 {
 	text-decoration: none;
 	color: #C98474;
 }
 
-.contactText:hover
+#contactText:hover
 {
-	font-weight: bold;
 	color: #F2D388;
 }
 
@@ -109,14 +105,13 @@
 	margin-right: 32px;
 }
 
-.resumeText
+#resumeText
 {
 	text-decoration: none;
 	color: #C98474;
 }
 
-.resumeText:hover
+#resumeText:hover
 {
-	font-weight: bold;
 	color: #F2D388;
 }

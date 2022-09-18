@@ -21,72 +21,41 @@
 		<link rel="stylesheet" type="text/css" href="styles/footer.css">
 	</head>
 	<body>
-		<nav class="navbar navbar-light" style="background-color: #874C62;">
+		<nav class="navbar navbar-expand-sm" style="background-color: #874C62;">
 			<!-- Navbar content -->
-			<div class="name">
-				<a href="#homescreenSection"class="nameText">
-					Michael Kelnar
-				</p>
-			</div>
-			<div class="aboutHeader">
-					<a href="#aboutSection" class="aboutText">
-						ABOUT
-					</a>
-			</div>
-			<div class="skillsHeader">
-				<a href="#skillsSection" class="skillsText">
-					SKILLS
-				</a>
-			</div>
-			<div class="projectsHeader">
-				<a href="#projectsSection" class="projectsText">
-					PROJECTS
-				</a>
-			</div>
-			<div class="contactHeader">
-				<a href="#contactSection" class="contactText">
-					CONTACT
-				</a>
-			</div>
-			<div class="resumeHeader">
-				<a href="files/MichaelKelnarResume.pdf" download class="resumeText">
-					RESUME
-				</a>
-			</div>
-		  </nav>
-		<!-- <div class="header">
-			<div class="name">
-				<a href="#homescreenSection"class="nameText">
-					Michael Kelnar
-				</p>
-			</div>
-			<div class="aboutHeader">
-					<a href="#aboutSection" class="aboutText">
-						ABOUT
-					</a>
-			</div>
-			<div class="skillsHeader">
-				<a href="#skillsSection" class="skillsText">
-					SKILLS
-				</a>
-			</div>
-			<div class="projectsHeader">
-				<a href="#projectsSection" class="projectsText">
-					PROJECTS
-				</a>
-			</div>
-			<div class="contactHeader">
-				<a href="#contactSection" class="contactText">
-					CONTACT
-				</a>
-			</div>
-			<div class="resumeHeader">
-				<a href="files/MichaelKelnarResume.pdf" download class="resumeText">
-					RESUME
-				</a>
-			</div>
 			
-		</div> -->
+			<a class="navbar-brand" href="#homescreenSection" id="nameText">
+				Michael Kelnar
+			</a>
+			
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav">
+				  	<li class="nav-item">
+						<a class="nav-link" href="#aboutSection" id="aboutText">About</a>
+				  	</li>
+				  	<li class="nav-item">
+						<a class="nav-link" href="#skillsSection" id="skillsText">Skills</a>
+				  	</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#projectsSection" id="projectsText">Projects</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#contactSection" id="contactText">Contact</a>
+				  	</li>
+
+					<li class="nav-item">
+						<a href="files/MichaelKelnarResume.pdf" download class="nav-link" id="resumeText">Resume</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 		
 		<div class="homescreen" id="homescreenSection">
 			<img class="profilePic" src="images/profilePic.png" alt="profile picture">
