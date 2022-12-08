@@ -21,7 +21,7 @@
 		<link rel="stylesheet" type="text/css" href="styles/footer.css">
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-sm" style="background-color: #874C62;">
+		<nav class="navbar navbar-expand-sm fixed-top" style="background-color: #874C62;">
 			<!-- Navbar content -->
 			
 			<a class="navbar-brand" href="#homescreenSection" id="nameText">
@@ -71,9 +71,7 @@
 			<div class="row" id="aboutSection">
 				<div class="col">
 					<p>
-						About me section Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu tristique tortor. Donec ornare commodo mauris, ut condimentum purus porttitor eget. Donec nec interdum enim. Donec venenatis condimentum quam, euismod scelerisque lectus interdum ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam lacinia tellus sed ipsum aliquet eleifend. Curabitur dictum justo at porta maximus. Vivamus suscipit cursus ante, ut laoreet libero. Sed nec risus tempus, consectetur lectus eget, eleifend diam. Aliquam varius porttitor euismod.
-		
-						In hac habitasse platea dictumst. Nunc ullamcorper, nulla sed commodo dapibus, eros arcu pharetra risus, et cursus nibh purus nec dolor. Suspendisse cursus magna rutrum vestibulum luctus. Maecenas sodales augue non ex luctus, mattis elementum tellus iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus quis sem sed urna consectetur elementum vel bibendum ipsum. Morbi quis faucibus nunc. Donec bibendum vulputate gravida.
+						I am currently pursuing a computer science degree at Bradley University with an expected graduation date of May 2023. While pursuing my education I have had several part-time work experiences that have prepared me with interpersonal skills to succeed. I am currently searching for a summer internship in the field of computer science.
 					</p>
 				</div>
 
@@ -91,15 +89,7 @@
 			<div class="row" id="skillsSection">
 				<div class="col">
 					<p>
-						Skills section Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu tristique tortor. Donec ornare commodo mauris, ut condimentum purus porttitor eget. Donec nec interdum enim. Donec venenatis condimentum quam, euismod scelerisque lectus interdum ut. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam lacinia tellus sed ipsum aliquet eleifend. Curabitur dictum justo at porta maximus. Vivamus suscipit cursus ante, ut laoreet libero. Sed nec risus tempus, consectetur lectus eget, eleifend diam. Aliquam varius porttitor euismod.
-		
-						In hac habitasse platea dictumst. Nunc ullamcorper, nulla sed commodo dapibus, eros arcu pharetra risus, et cursus nibh purus nec dolor. Suspendisse cursus magna rutrum vestibulum luctus. Maecenas sodales augue non ex luctus, mattis elementum tellus iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus quis sem sed urna consectetur elementum vel bibendum ipsum. Morbi quis faucibus nunc. Donec bibendum vulputate gravida.
-						
-						Vestibulum accumsan magna vitae diam fermentum, ac aliquam quam placerat. Morbi lectus tellus, blandit ullamcorper ipsum at, ullamcorper dignissim tellus. Donec tincidunt rhoncus odio, id aliquam diam hendrerit et. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In auctor posuere urna, ut hendrerit urna consequat ac. Proin ligula ex, tristique id dignissim ac, venenatis sit amet nulla. Quisque eget efficitur arcu, sed vulputate arcu. Nam faucibus, augue at porta ultricies, lorem felis placerat eros, eu tempus lorem velit id ipsum. Donec non eros nisl. Etiam pretium mollis vestibulum. Proin molestie erat quis sollicitudin sodales. Nam rhoncus diam eu felis commodo luctus.
-						
-						Vivamus cursus ante sed nibh pretium, porttitor iaculis orci porttitor. Suspendisse blandit ligula non vehicula tempus. Mauris tempor sodales hendrerit. Cras lacinia metus nec sollicitudin luctus. Pellentesque lobortis, nulla nec hendrerit posuere, leo neque interdum purus, a ullamcorper purus sem lacinia diam. Sed semper diam risus, at fringilla purus sagittis tristique. Praesent sed sapien eu massa cursus luctus. Quisque fermentum consectetur tempor. Sed molestie ultrices velit, in lobortis mauris gravida sagittis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum luctus finibus nisi et aliquet. Sed purus mi, hendrerit ut elit nec, egestas faucibus justo. Aenean gravida scelerisque consequat. Vivamus molestie vestibulum arcu a eleifend.
-						
-						Nulla euismod ut purus nec dictum. Vivamus commodo id diam quis cursus. Nullam facilisis dapibus ante. Sed aliquet felis vitae elit ultrices varius. Morbi sit amet augue ex. Suspendisse ultrices odio at odio efficitur lacinia. Duis et placerat lacus, in gravida nibh. Nunc malesuada sed arcu eu gravida. Duis laoreet dui a erat euismod, eu pretium tortor consectetur.
+						Skills section
 					</p>
 				</div>
 
@@ -126,11 +116,17 @@
 			</ul>
 		</div>
 
-		<div class="contact" id="contactSection">
-			<p>
-				Contact Section ...
-			</p>
-		</div>
+		<div class="container mt-3" id="contactSection">
+			<h2>Contact</h2>
+			<p>Use the .form-control class to style textareas as well:</p>
+			<form action="/action_page.php">
+			  <div class="mb-3 mt-3">
+				<label for="comment">Comments:</label>
+				<textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+			  </div>
+			  <button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		  </div>
 
 		<div class="footer">
 			<div class="aboutFooter">

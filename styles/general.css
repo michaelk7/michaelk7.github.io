@@ -51,6 +51,24 @@ h1
   padding: 100px;
 }
 
+.cPlusPlus
+{
+  width: 100px;
+  height: 100px;
+}
+
+.python
+{
+  width: 100px;
+  height: 100px;
+}
+
+.sql
+{
+  width: 100px;
+  height: 100px;
+}
+
 .projects
 {
   margin: 50px;
