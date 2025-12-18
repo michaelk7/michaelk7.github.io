@@ -1,32 +1,22 @@
-title: "root@michaelkelnar:~"
+title: "Michael Kelnar"
+lang: "en"
 description: "Cyber Security Engineer | Firmware Analysis | IoT Security"
 url: "https://michaelkelnar.com"
 
-# THEME SETTINGS (The Terminal Look)
-remote_theme: bitbrain/jekyll-theme-terminals
+# THEME SETTINGS
+remote_theme: b2a3e8/jekyll-theme-console
 
-# SKIN SELECTION
-# Options: "ubuntu" (Orange/Purple), "arch" (Blue), "matrix" (Green), "hacker" (Green/Black)
-terminals_skin: "ubuntu" 
-
-# PROMPT SETTINGS
-terminals_prompt:
-  username: "michael"
-  host: "kelnar"
-  color: "green" # or blue, red, etc.
+# STYLE: Choose 'hacker' (Green), 'dark' (Modern), or 'nord' (Blueish)
+style: hacker
 
 # PLUGINS
 plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
 
-# NAVIGATION (Appears as "commands" at the top)
+# MENU (Top Right)
 header_pages:
   - index.md
 
-# AUTHOR DATA
-author:
-  name: "Michael Kelnar"
-  email: "your_email@example.com"
-  github_username: "michaelk7"
-  linkedin_username: "michaelkelnar"
+# FOOTER
+footer: 'root@kelnar:~/portfolio# <a href="https://linkedin.com/in/michaelkelnar">LinkedIn</a> | <a href="https://github.com/michaelk7">GitHub</a>'

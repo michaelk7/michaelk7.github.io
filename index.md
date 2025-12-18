@@ -1,47 +1,35 @@
 ---
-layout: page
-title: "./view_profile.sh"
-permalink: /
+layout: default
 ---
 
-## [INIT] Loading user profile...
-
-**Name:** Michael Kelnar
+# ./whoami
 **Role:** Cyber Security Analyst @ UL Solutions
-**Location:** Chicago, IL (::1)
-**Status:** Online
+**Location:** Chicago, IL
+**Focus:** IoT Compliance, Firmware Analysis, Network Defense
 
 ---
 
-### [BIO]
-Cyber Security Engineer focused on **IoT compliance**, **firmware analysis**, and **network defense**. 
-specializing in identifying vulnerabilities in consumer electronics before market release.
+# ./show_skills.sh
+### [Security Analysis]
+> Binwalk, Nmap, Wireshark, Burp Suite
 
-### [SKILLS]
-```bash
-# Security Analysis
-$ binwalk --extract firmware.bin
-$ nmap -sV -p- 192.168.1.0/24
-$ burpsuite --proxy 127.0.0.1:8080
+### [Compliance]
+> UL 1376, IoT Security Ratings, NIST
 
-# Compliance & Standards
-> UL 1376 (IoT Security Rating)
-> NIST Cybersecurity Framework
-
-# Infrastructure
-> Docker, AWS, Kali Linux, Bash Scripting
-```
-
-### [PROJECTS]
-**1. Consumer IoT Security Assessment**
-> Conducted UL 1376 assessment on confidential IoT hardware. Identified critical firmware vulnerabilities (CVE-pending) and established security baseline.
-
-**2. Automated Reconnaissance Tool**
-> python3 recon_automator.py
-> Result: Reduced manual Nmap scanning time by 40% across lab environments.
+### [Infrastructure]
+> Docker, AWS, Linux (Ubuntu/Kali)
 
 ---
-### [CONTACT]
-* [LinkedIn](https://linkedin.com/in/michaelkelnar)
-* [GitHub](https://github.com/michaelk7)
 
+# ./list_projects.sh
+### 1. Consumer IoT Security Assessment
+**Target:** Confidential Consumer Electronics
+**Action:** Conducted UL 1376 assessment.
+**Result:** Identified critical firmware vulnerabilities (CVE-pending) prior to release.
+
+### 2. Automated Network Reconnaissance
+**Tool:** Python/Bash Custom Script
+**Action:** Automate Nmap scanning in lab environments.
+**Result:** Reduced manual testing time by 40%.
+
+---
