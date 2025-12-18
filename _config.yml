@@ -1,0 +1,31 @@
+title: Michael Kelnar
+author: Michael Kelnar
+url: "https://michaelkelnar.com" # Your custom domain
+description: "Cyber Security Engineer at UL. Focused on IoT compliance, firmware analysis, and network defense."
+
+# THEME SETTINGS
+remote_theme: mmistakes/minimal-mistakes
+minimal_mistakes_skin: "dark" # Modern dark mode
+
+# PLUGINS (Required for this theme on GitHub Pages)
+plugins:
+  - jekyll-remote-theme
+  - jekyll-include-cache
+
+# SIDEBAR / AUTHOR PROFILE
+author:
+  name: "Michael Kelnar"
+  avatar: "/assets/images/profile.jpg" # You will need to add a photo later
+  bio: "Cyber Security Engineer @ UL"
+  location: "Chicago, IL"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/michaelk7"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/michaelkelnar" # Update if needed
+
+# BUILD SETTINGS
+markdown: kramdown
+theme: minimal-mistakes-jekyll
