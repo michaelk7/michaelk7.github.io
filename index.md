@@ -2,6 +2,20 @@
 layout: default
 ---
 
+<pre>
+ ██████   ██████  ███           █████                         ████ 
+░░██████ ██████  ░░░           ░░███                         ░░███ 
+ ░███░█████░███  ████   ██████  ░███████    ██████    ██████  ░███ 
+ ░███░░███ ░███ ░░███  ███░░███ ░███░░███  ░░░░░███  ███░░███ ░███ 
+ ░███ ░░░  ░███  ░███ ░███ ░░░  ░███ ░███   ███████ ░███████  ░███ 
+ ░███      ░███  ░███ ░███  ███ ░███ ░███  ███░░███ ░███░░░   ░███ 
+ █████     █████ █████░░██████  ████ █████░░████████░░██████  █████
+░░░░░     ░░░░░ ░░░░░  ░░░░░░  ░░░░ ░░░░░  ░░░░░░░░  ░░░░░░  ░░░░░ 
+Cyber Security Engineer
+</pre>
+
+---
+
 # ./whoami
 **Role:** Cyber Security Analyst @ UL Solutions
 **Location:** Chicago, IL
@@ -14,10 +28,16 @@ layout: default
 > Binwalk, Nmap, Wireshark, Burp Suite
 
 ### [Compliance]
-> UL 1376, IoT Security Ratings, NIST
+> UL 1376, RED Directive, NIST
 
 ### [Infrastructure]
 > Docker, AWS, Linux (Ubuntu/Kali)
+
+---
+
+# ./show_education.sh
+**Bradley University**
+> B.S. Computer Science (2023)
 
 ---
 
@@ -33,3 +53,10 @@ layout: default
 **Result:** Reduced manual testing time by 40%.
 
 ---
+
+# ./get_resume.sh
+$ wget resume.pdf
+> [==========================>] 100% OK
+
+**[>> CLICK TO OPEN RESUME <<](/assets/resume.pdf)**
+
