@@ -1,30 +1,32 @@
-title: Michael Kelnar
-author: Michael Kelnar
-url: "https://michaelkelnar.com" # Your custom domain
-description: "Cyber Security Engineer at UL. Focused on IoT compliance, firmware analysis, and network defense."
+title: "root@michaelkelnar:~"
+description: "Cyber Security Engineer | Firmware Analysis | IoT Security"
+url: "https://michaelkelnar.com"
 
-# THEME SETTINGS
-remote_theme: mmistakes/minimal-mistakes
-minimal_mistakes_skin: "dark" # Modern dark mode
+# THEME SETTINGS (The Terminal Look)
+remote_theme: bitbrain/jekyll-theme-terminals
 
-# PLUGINS (Required for this theme on GitHub Pages)
+# SKIN SELECTION
+# Options: "ubuntu" (Orange/Purple), "arch" (Blue), "matrix" (Green), "hacker" (Green/Black)
+terminals_skin: "ubuntu" 
+
+# PROMPT SETTINGS
+terminals_prompt:
+  username: "michael"
+  host: "kelnar"
+  color: "green" # or blue, red, etc.
+
+# PLUGINS
 plugins:
   - jekyll-remote-theme
-  - jekyll-include-cache
+  - jekyll-seo-tag
 
-# SIDEBAR / AUTHOR PROFILE
+# NAVIGATION (Appears as "commands" at the top)
+header_pages:
+  - index.md
+
+# AUTHOR DATA
 author:
   name: "Michael Kelnar"
-  avatar: "/assets/images/profile.jpg" # You will need to add a photo later
-  bio: "Cyber Security Engineer @ UL"
-  location: "Chicago, IL"
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/michaelk7"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://linkedin.com/in/michaelkelnar" # Update if needed
-
-# BUILD SETTINGS
-markdown: kramdown
+  email: "your_email@example.com"
+  github_username: "michaelk7"
+  linkedin_username: "michaelkelnar"
