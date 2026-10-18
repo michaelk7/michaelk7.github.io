@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="404" description="Page not found.">
+  <div class="wrap panic">
+    <pre class="log"><span class="err">[ 0.404000] Kernel panic - not syncing: VFS: unable to mount requested path</span>
+[ 0.404001] CPU: 0 PID: 1 Comm: httpd Not tainted
+[ 0.404002] Call Trace:
+[ 0.404003]  resolve_route+0x404/0x404
+[ 0.404004]  serve_page+0x1f/0x2a
+[ 0.404005] ---[ end Kernel panic - not syncing ]---</pre>
+    <h1>404 — that page doesn't exist.</h1>
+    <p>It may have moved during the redesign. Try one of these instead.</p>
+    <div class="actions">
+      <a class="btn primary" href="/">Reboot (home)</a>
+      <a class="btn" href="/projects/">Projects</a>
+      <a class="btn" href="/writeups/">Write-ups</a>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .panic { padding: 96px 24px 120px; }
+  .log {
+    font-family: var(--mono); font-size: 12.5px; line-height: 1.7; color: var(--faint);
+    background: var(--bg-raised); border: 1px solid var(--line); border-radius: 10px;
+    padding: 20px 22px; overflow-x: auto; margin-bottom: 48px;
+  }
+  .err { color: #ff6b6b; }
+  h1 { font-size: clamp(30px, 5vw, 44px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.15; }
+  p { color: var(--muted); margin-top: 14px; }
+  @media (max-width: 680px) { .panic { padding: 64px 16px 96px; } }
+</style>

@@ -1,0 +1,24 @@
+---
+import { render } from 'astro:content';
+import Article from '../../layouts/Article.astro';
+import { getWriteups, formatDate } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const posts = await getWriteups();
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Article
+  title={post.data.title}
+  description={post.data.description}
+  crumb={{ href: '/writeups/', label: '~/writeups' }}
+  meta={[formatDate(post.data.date), post.data.kind]}
+  tags={post.data.tags}
+  draft={post.data.draft}
+>
+  <Content />
+</Article>

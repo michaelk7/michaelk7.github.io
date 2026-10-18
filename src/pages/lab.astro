@@ -1,0 +1,85 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Placeholder lab inventory. Replace with your real setup.
+const hardware = [
+  { name: 'Firewall / router', detail: 'OPNsense on a mini PC', role: 'routing, VLANs, IDS' },
+  { name: 'Hypervisor', detail: 'Proxmox VE', role: 'VMs and containers' },
+  { name: 'Switch', detail: 'Managed, 802.1Q', role: 'segmentation' },
+  { name: 'Bench', detail: 'UART / SPI / JTAG tools', role: 'hardware hacking' },
+];
+const networks = [
+  { vlan: '10', name: 'mgmt', note: 'admin interfaces only' },
+  { vlan: '20', name: 'servers', note: 'Proxmox guests, internal services' },
+  { vlan: '30', name: 'iot', note: 'isolated, no route to other VLANs' },
+  { vlan: '99', name: 'attack', note: 'Kali box, targets on demand' },
+];
+---
+
+<Base title="Home lab" description="The segmented home lab Michael Kelnar uses to practice offense and defense on real hardware.">
+  <div class="wrap">
+    <header class="page-head">
+      <span class="crumb"><a href="/">~</a> <span>/</span> lab</span>
+      <h1>Home lab <span class="placeholder-flag">placeholder content</span></h1>
+      <p>A segmented network where I test IoT devices, practice attack techniques and try defensive tooling before using it at work.</p>
+    </header>
+
+    <div class="diagram" role="img" aria-label="Network diagram: the WAN connects to an OPNsense firewall, which routes four VLANs: management, servers, an isolated IoT network and an attack network.">
+<pre>            ┌──────────────┐
+  wan ──────┤  <em>opnsense</em>    │  firewall · ids · dns
+            └──────┬───────┘
+                   │ 802.1Q trunk
+     ┌─────────────┼──────────────┬─────────────┐
+  vlan10        vlan20         vlan30        vlan99
+  mgmt          <em>proxmox</em>        iot           attack
+                vms / lxc      ⟵ isolated    kali</pre>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="wrap grid2">
+      <div class="card">
+        <span class="label">./hardware</span>
+        <h3>Hardware</h3>
+        <ul class="kv">
+          {hardware.map((h) => <li><span>{h.name}</span><span>{h.detail}</span></li>)}
+        </ul>
+      </div>
+      <div class="card">
+        <span class="label">./networks</span>
+        <h3>Segments</h3>
+        <ul class="kv">
+          {networks.map((n) => <li><span>vlan{n.vlan} · {n.name}</span><span>{n.note}</span></li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <span class="label mono">./uses</span>
+      <h2 class="h2">What I use it for</h2>
+      <ul class="uses">
+        <li><b>Firmware teardown.</b> Dumping and analyzing firmware from cheap consumer devices.</li>
+        <li><b>Traffic analysis.</b> Watching what IoT devices phone home to from the isolated VLAN.</li>
+        <li><b>Detection practice.</b> Running attacks from vlan99 and checking what the IDS catches.</li>
+        <li><b>Tool development.</b> Testing scanning and automation scripts before using them on real engagements.</li>
+      </ul>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .diagram {
+    background: var(--bg-raised); border: 1px solid var(--line); border-radius: 10px;
+    padding: 28px; overflow-x: auto; margin-bottom: 72px;
+  }
+  pre { font-family: var(--mono); font-size: 13px; line-height: 1.55; color: var(--muted); }
+  pre em { color: var(--accent); font-style: normal; }
+  .label { font-size: 12px; color: var(--accent); display: block; margin-bottom: 14px; }
+  .h2 { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 18px; }
+  .uses { list-style: none; max-width: 680px; padding-bottom: 32px; }
+  .uses li { padding: 12px 0; border-top: 1px solid var(--line); color: var(--muted); }
+  .uses b { color: var(--text); font-weight: 600; }
+  @media (max-width: 680px) { .diagram { padding: 18px; margin-bottom: 56px; } pre { font-size: 11.5px; } }
+</style>

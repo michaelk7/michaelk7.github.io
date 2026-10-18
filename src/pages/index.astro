@@ -1,0 +1,141 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHead from '../components/SectionHead.astro';
+import ProjectList from '../components/ProjectList.astro';
+import PostList from '../components/PostList.astro';
+import Fingerprint from '../components/Fingerprint.astro';
+import { SITE, CERTIFICATIONS } from '../consts';
+import { getProjects, getWriteups } from '../lib/content';
+import { resumeHref } from '../lib/resume';
+
+const projects = (await getProjects()).filter((p) => p.data.featured).slice(0, 3);
+const posts = (await getWriteups()).slice(0, 4);
+const certs = CERTIFICATIONS.filter((c) => import.meta.env.DEV || !c.placeholder);
+---
+
+<Base>
+  <div class="wrap">
+    <div class="hero">
+      <div class="eyebrow"><span class="dot"></span>{SITE.role}</div>
+      <h1>{SITE.name}</h1>
+      <p class="lede">
+        I break embedded devices before attackers do. Currently assessing connected products at{' '}
+        <strong>{SITE.employer}</strong>, from firmware extraction to network attack surface.<span class="cursor" aria-hidden="true"></span>
+      </p>
+      <div class="actions">
+        {resumeHref && <a class="btn primary" href={resumeHref}>Resume ↗</a>}
+        <a class:list={['btn', { primary: !resumeHref }]} href="/writeups/">Read write-ups</a>
+        <a class="btn" href="#contact">PGP key</a>
+      </div>
+      <div class="meta-row">
+        <div><b>loc</b> {SITE.location}</div>
+        <div><b>focus</b> {SITE.focus}</div>
+        <div><b>edu</b> {SITE.education}</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="block" id="work">
+    <div class="wrap">
+      <SectionHead num="01" title="selected work" href="/projects/" linkLabel="all projects" />
+      <ProjectList projects={projects} />
+    </div>
+  </section>
+
+  <section class="block" id="writeups">
+    <div class="wrap">
+      <SectionHead num="02" title="writeups" href="/writeups/" linkLabel="all posts" />
+      <PostList posts={posts} />
+    </div>
+  </section>
+
+  <section class="block" id="lab">
+    <div class="wrap">
+      <SectionHead num="03" title="lab & about" />
+      <div class="grid2">
+        <a class="card" href="/lab/">
+          <span class="label">~/lab</span>
+          <h3>Home lab</h3>
+          <p>A segmented network where I practice attack and defense on real hardware.</p>
+          <div class="topo">wan ── <em>opnsense</em> ─┬─ vlan10  mgmt
+                ├─ vlan20  <em>proxmox</em>
+                ├─ vlan30  iot  ⟵ isolated
+                └─ vlan99  attack box</div>
+        </a>
+        <a class="card" href="/about/">
+          <span class="label">~/about</span>
+          <h3>Background</h3>
+          <p>Skills, certifications and education.</p>
+          <ul class="kv">
+            {certs.map((c) => (
+              <li>
+                <span>{c.name}{c.placeholder && <span class="placeholder-flag">placeholder</span>}</span>
+                <span>{c.year}</span>
+              </li>
+            ))}
+            <li><span>B.S. Computer Science</span><span>Bradley '23</span></li>
+          </ul>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block contact" id="contact">
+    <div class="wrap">
+      <SectionHead num="04" title="contact" />
+      <h2>Working on connected devices? Let's talk.</h2>
+      <p>The fastest way to reach me is email. For anything sensitive, encrypt it with my PGP key.</p>
+      <div class="actions">
+        <a class="btn primary" href={`mailto:${SITE.email}`}>Email me</a>
+        <a class="btn" href={SITE.linkedin} rel="me">LinkedIn ↗</a>
+        <a class="btn" href={SITE.github} rel="me">GitHub ↗</a>
+      </div>
+      <Fingerprint />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { padding: 112px 0 88px; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 13px; color: var(--accent);
+    display: inline-flex; align-items: center; gap: 10px; margin-bottom: 28px;
+  }
+  .dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-dim);
+  }
+  h1 {
+    font-size: clamp(40px, 7vw, 64px);
+    font-weight: 600; letter-spacing: -0.035em; line-height: 1.05;
+    margin-bottom: 24px;
+  }
+  .lede {
+    font-size: clamp(18px, 2.4vw, 21px); color: var(--muted);
+    max-width: 600px; line-height: 1.55; letter-spacing: -0.01em;
+  }
+  .lede strong { color: var(--text); font-weight: 500; }
+  .cursor {
+    display: inline-block; width: 0.55em; height: 1.05em; background: var(--accent);
+    vertical-align: -0.15em; margin-left: 4px; animation: blink 1.1s steps(1) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 56px;
+    font-family: var(--mono); font-size: 12.5px; color: var(--faint);
+  }
+  .meta-row b { color: var(--muted); font-weight: 400; }
+
+  .topo {
+    font-family: var(--mono); font-size: 12px; line-height: 1.55; color: var(--muted);
+    margin-top: 20px; white-space: pre; overflow-x: auto;
+  }
+  .topo em { color: var(--accent); font-style: normal; }
+
+  .contact h2 { font-size: clamp(28px, 4.5vw, 38px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.15; max-width: 560px; }
+  .contact p { color: var(--muted); margin-top: 16px; max-width: 520px; }
+
+  @media (max-width: 680px) {
+    .hero { padding: 72px 0 64px; }
+  }
+</style>

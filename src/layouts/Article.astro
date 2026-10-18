@@ -1,0 +1,40 @@
+---
+import Base from './Base.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  crumb: { href: string; label: string };
+  meta?: string[];
+  tags?: string[];
+  draft?: boolean;
+}
+const { title, description, crumb, meta = [], tags = [], draft } = Astro.props;
+---
+
+<Base title={title} description={description} type="article">
+  <div class="wrap">
+    <header class="page-head">
+      <span class="crumb"><a href={crumb.href}>{crumb.label}</a> <span>/</span></span>
+      <h1>{title}{draft && <span class="placeholder-flag">draft</span>}</h1>
+      <p>{description}</p>
+      {(meta.length > 0 || tags.length > 0) && (
+        <div class="meta">
+          {meta.map((m) => <span>{m}</span>)}
+          {tags.length > 0 && <div class="tags">{tags.map((t) => <span class="tag">{t}</span>)}</div>}
+        </div>
+      )}
+    </header>
+    <article class="prose">
+      <slot />
+    </article>
+  </div>
+</Base>
+
+<style>
+  .meta {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px 24px; margin-top: 28px;
+    font-family: var(--mono); font-size: 12.5px; color: var(--faint);
+  }
+  .page-head { border-bottom: 1px solid var(--line); margin-bottom: 48px; }
+</style>

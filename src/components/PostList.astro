@@ -1,0 +1,45 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatDate } from '../lib/content';
+
+interface Props {
+  posts: CollectionEntry<'writeups'>[];
+}
+const { posts } = Astro.props;
+---
+
+{posts.length === 0 ? (
+  <p class="empty">// first write-ups coming soon</p>
+) : (
+  <ul class="posts">
+    {posts.map((post) => (
+      <li class="post">
+        <a href={`/writeups/${post.id}/`}>
+          <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+          <span class="t">
+            {post.data.title}
+            {post.data.draft && <span class="placeholder-flag">draft</span>}
+          </span>
+          <span class="kind">{post.data.kind}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+)}
+
+<style>
+  .posts { list-style: none; }
+  .post a {
+    display: grid; grid-template-columns: 110px 1fr auto; gap: 20px; align-items: baseline;
+    padding: 16px 0; border-bottom: 1px dashed var(--line);
+  }
+  .post:last-child a { border-bottom: 0; }
+  time { font-family: var(--mono); font-size: 13px; color: var(--faint); }
+  .t { font-size: 16.5px; font-weight: 500; transition: color .15s; }
+  .post a:hover .t { color: var(--accent); }
+  .kind { font-family: var(--mono); font-size: 12px; color: var(--faint); }
+  @media (max-width: 680px) {
+    .post a { grid-template-columns: 1fr; gap: 2px; }
+    .kind { display: none; }
+  }
+</style>
