@@ -4,7 +4,6 @@ import Fingerprint from '../components/Fingerprint.astro';
 import { SITE, SKILLS, CERTIFICATIONS } from '../consts';
 import { resumeHref } from '../lib/resume';
 
-const certs = CERTIFICATIONS.filter((c) => import.meta.env.DEV || !c.placeholder);
 ---
 
 <Base title="About" description="Background, skills, certifications and contact details for Michael Kelnar.">
@@ -13,9 +12,11 @@ const certs = CERTIFICATIONS.filter((c) => import.meta.env.DEV || !c.placeholder
       <span class="crumb"><a href="/">~</a> <span>/</span> about</span>
       <h1>About</h1>
       <p>
-        I'm a security engineer at {SITE.employer} in {SITE.location}. I assess connected products against
-        standards like UL 1376 and the EU RED directive, which mostly means pulling firmware apart, mapping
-        network attack surface and explaining what I find to engineering teams.
+        I'm a {SITE.jobTitle} at {SITE.employer}, based in {SITE.location}. I do cybersecurity compliance
+        testing on embedded and connected devices, including EN 18031 evaluations under the EU Radio Equipment
+        Directive, for products used in healthcare and industrial environments. That means examining firmware,
+        communication protocols and hardware interfaces for vulnerabilities, then explaining what I find to
+        engineering teams.
       </p>
       <div class="actions">
         {resumeHref && <a class="btn primary" href={resumeHref}>Resume ↗</a>}
@@ -40,14 +41,9 @@ const certs = CERTIFICATIONS.filter((c) => import.meta.env.DEV || !c.placeholder
       </div>
       <div class="card">
         <span class="label">./credentials</span>
-        <h3>Certifications & education</h3>
+        <h3>{CERTIFICATIONS.length > 0 ? 'Certifications & education' : 'Education'}</h3>
         <ul class="kv">
-          {certs.map((c) => (
-            <li>
-              <span>{c.name}{c.placeholder && <span class="placeholder-flag">placeholder</span>}</span>
-              <span>{c.year}</span>
-            </li>
-          ))}
+          {CERTIFICATIONS.map((c) => <li><span>{c.name}</span><span>{c.year}</span></li>)}
           <li><span>B.S. Computer Science, Bradley University</span><span>2023</span></li>
         </ul>
       </div>

@@ -1,7 +1,7 @@
 ---
 title: Automated network reconnaissance
 summary: Python and Bash tooling that automates Nmap scanning across lab environments, cutting manual testing time by about 40%.
-year: 2024
+year: 2025
 tags: [python, bash, nmap, automation]
 order: 2
 featured: true

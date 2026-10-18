@@ -19,6 +19,8 @@ A consumer electronics manufacturer needed its connected product assessed agains
 
 ## Outcome
 
-Identified **critical firmware vulnerabilities** before the product shipped. The manufacturer fixed them ahead of release, and CVE assignment is pending.
+Identified **critical firmware vulnerabilities** before the product shipped, and the manufacturer fixed them ahead of release.
+
+In contracted testing like this, the client owns all findings and test data, so vulnerabilities are reported to them rather than disclosed publicly or filed as CVEs.
 
 <!-- TODO: add anything you can share publicly: the class of bugs found, tools used, or how fixes were verified. -->

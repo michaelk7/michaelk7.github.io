@@ -4,13 +4,13 @@ import SectionHead from '../components/SectionHead.astro';
 import ProjectList from '../components/ProjectList.astro';
 import PostList from '../components/PostList.astro';
 import Fingerprint from '../components/Fingerprint.astro';
-import { SITE, CERTIFICATIONS } from '../consts';
+import { SITE, CERTIFICATIONS, SKILLS, labVisible } from '../consts';
 import { getProjects, getWriteups } from '../lib/content';
 import { resumeHref } from '../lib/resume';
 
 const projects = (await getProjects()).filter((p) => p.data.featured).slice(0, 3);
 const posts = (await getWriteups()).slice(0, 4);
-const certs = CERTIFICATIONS.filter((c) => import.meta.env.DEV || !c.placeholder);
+const topSkills = SKILLS.flatMap((s) => s.items).slice(0, 10);
 ---
 
 <Base>
@@ -19,8 +19,8 @@ const certs = CERTIFICATIONS.filter((c) => import.meta.env.DEV || !c.placeholder
       <div class="eyebrow"><span class="dot"></span>{SITE.role}</div>
       <h1>{SITE.name}</h1>
       <p class="lede">
-        I break embedded devices before attackers do. Currently assessing connected products at{' '}
-        <strong>{SITE.employer}</strong>, from firmware extraction to network attack surface.<span class="cursor" aria-hidden="true"></span>
+        I test connected products against cybersecurity standards, from firmware analysis to network attack
+        surface, so they're secure before they ship. Currently at <strong>{SITE.employer}</strong>.<span class="cursor" aria-hidden="true"></span>
       </p>
       <div class="actions">
         {resumeHref && <a class="btn primary" href={resumeHref}>Resume ↗</a>}
@@ -49,30 +49,34 @@ const certs = CERTIFICATIONS.filter((c) => import.meta.env.DEV || !c.placeholder
     </div>
   </section>
 
-  <section class="block" id="lab">
+  <section class="block" id="about">
     <div class="wrap">
-      <SectionHead num="03" title="lab & about" />
+      <SectionHead num="03" title={labVisible ? 'lab & about' : 'about'} href="/about/" linkLabel="more about me" />
       <div class="grid2">
-        <a class="card" href="/lab/">
-          <span class="label">~/lab</span>
-          <h3>Home lab</h3>
-          <p>A segmented network where I practice attack and defense on real hardware.</p>
-          <div class="topo">wan ── <em>opnsense</em> ─┬─ vlan10  mgmt
+        {labVisible ? (
+          <a class="card" href="/lab/">
+            <span class="label">~/lab</span>
+            <h3>Home lab</h3>
+            <p>A segmented network where I practice attack and defense on real hardware.</p>
+            <div class="topo">wan ── <em>opnsense</em> ─┬─ vlan10  mgmt
                 ├─ vlan20  <em>proxmox</em>
                 ├─ vlan30  iot  ⟵ isolated
                 └─ vlan99  attack box</div>
-        </a>
+          </a>
+        ) : (
+          <a class="card" href="/about/">
+            <span class="label">./skills</span>
+            <h3>Toolkit</h3>
+            <p>Security testing, standards and the tools I use day to day.</p>
+            <div class="tags skills">{topSkills.map((t) => <span class="tag">{t}</span>)}</div>
+          </a>
+        )}
         <a class="card" href="/about/">
           <span class="label">~/about</span>
           <h3>Background</h3>
-          <p>Skills, certifications and education.</p>
+          <p>{SITE.jobTitle} at {SITE.employer} since 2025, after a year supporting its cybersecurity team as a lab technician.</p>
           <ul class="kv">
-            {certs.map((c) => (
-              <li>
-                <span>{c.name}{c.placeholder && <span class="placeholder-flag">placeholder</span>}</span>
-                <span>{c.year}</span>
-              </li>
-            ))}
+            {CERTIFICATIONS.map((c) => <li><span>{c.name}</span><span>{c.year}</span></li>)}
             <li><span>B.S. Computer Science</span><span>Bradley '23</span></li>
           </ul>
         </a>
@@ -131,6 +135,7 @@ const certs = CERTIFICATIONS.filter((c) => import.meta.env.DEV || !c.placeholder
     margin-top: 20px; white-space: pre; overflow-x: auto;
   }
   .topo em { color: var(--accent); font-style: normal; }
+  .skills { margin-top: 18px; }
 
   .contact h2 { font-size: clamp(28px, 4.5vw, 38px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.15; max-width: 560px; }
   .contact p { color: var(--muted); margin-top: 16px; max-width: 520px; }

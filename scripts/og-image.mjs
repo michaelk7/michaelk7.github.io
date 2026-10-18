@@ -11,9 +11,9 @@ const svg = `
   </g>
   <text x="96" y="120" font-family="Menlo, monospace" font-size="28" fill="#e6e8e6">~/kelnar<tspan fill="#7ee2a8">_</tspan></text>
   <circle cx="104" cy="262" r="8" fill="#7ee2a8"/>
-  <text x="128" y="272" font-family="Menlo, monospace" font-size="28" fill="#7ee2a8">Security Engineer · IoT &amp; Firmware</text>
+  <text x="128" y="272" font-family="Menlo, monospace" font-size="28" fill="#7ee2a8">Cybersecurity Compliance Testing · IoT &amp; Firmware</text>
   <text x="92" y="388" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="104" font-weight="600" letter-spacing="-3" fill="#e6e8e6">Michael Kelnar</text>
-  <text x="96" y="460" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="34" fill="#8a918c">I break embedded devices before attackers do.</text>
+  <text x="96" y="460" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="34" fill="#8a918c">I test connected products before they ship.</text>
   <rect x="96" y="540" width="1008" height="1" fill="#232825"/>
   <text x="96" y="582" font-family="Menlo, monospace" font-size="24" fill="#6b726d">michaelkelnar.com</text>
 </svg>`;

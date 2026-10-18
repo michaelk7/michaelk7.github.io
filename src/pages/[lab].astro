@@ -1,5 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
+import { labVisible } from '../consts';
+
+// A dynamic route so the page can be left out of production builds until SHOW_LAB is true.
+export function getStaticPaths() {
+  return labVisible ? [{ params: { lab: 'lab' } }] : [];
+}
 
 // Placeholder lab inventory. Replace with your real setup.
 const hardware = [
