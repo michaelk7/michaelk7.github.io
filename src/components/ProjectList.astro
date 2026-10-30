@@ -1,0 +1,49 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  projects: CollectionEntry<'projects'>[];
+}
+const { projects } = Astro.props;
+---
+
+{projects.length === 0 ? (
+  <p class="empty">// no projects published yet</p>
+) : (
+  <ul class="projects">
+    {projects.map((p, i) => (
+      <li>
+        <a class="project" href={`/projects/${p.id}/`}>
+          <span class="num">{String(i + 1).padStart(2, '0')}</span>
+          <h3>
+            {p.data.title}
+            {p.data.draft && <span class="placeholder-flag">draft</span>}
+          </h3>
+          <span class="year">{p.data.year}</span>
+          <p>{p.data.summary}</p>
+          <div class="tags">{p.data.tags.map((t) => <span class="tag">{t}</span>)}</div>
+        </a>
+      </li>
+    ))}
+  </ul>
+)}
+
+<style>
+  .projects { list-style: none; }
+  .project {
+    display: grid; grid-template-columns: 56px 1fr auto; gap: 8px 20px;
+    padding: 26px 0; border-bottom: 1px solid var(--line); align-items: baseline;
+  }
+  li:first-child .project { padding-top: 0; }
+  .project:hover h3 { color: var(--accent); }
+  .num { font-family: var(--mono); font-size: 13px; color: var(--faint); }
+  h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.015em; transition: color .15s; }
+  p { grid-column: 2; color: var(--muted); font-size: 15px; max-width: 560px; }
+  .year { font-family: var(--mono); font-size: 13px; color: var(--faint); }
+  .tags { grid-column: 2; margin-top: 6px; }
+  @media (max-width: 680px) {
+    .project { grid-template-columns: 1fr auto; }
+    .num { display: none; }
+    p, .tags { grid-column: 1 / -1; }
+  }
+</style>

@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import { getWriteups } from '../../lib/content';
+
+const posts = await getWriteups();
+---
+
+<Base title="Write-ups" description="Research notes, CTF write-ups and home lab notes by Michael Kelnar.">
+  <div class="wrap">
+    <header class="page-head">
+      <span class="crumb"><a href="/">~</a> <span>/</span> writeups</span>
+      <h1>Write-ups</h1>
+      <p>Firmware research, CTF walkthroughs, compliance notes and lab experiments. Subscribe via <a class="rss" href="/rss.xml">RSS</a>.</p>
+    </header>
+    <div class="list"><PostList posts={posts} /></div>
+  </div>
+</Base>
+
+<style>
+  .list { padding-bottom: 96px; }
+  .rss { color: var(--accent); }
+</style>

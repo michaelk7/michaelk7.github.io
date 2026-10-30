@@ -1,0 +1,77 @@
+---
+import Base from '../layouts/Base.astro';
+import Fingerprint from '../components/Fingerprint.astro';
+import { SITE, SKILLS, CERTIFICATIONS } from '../consts';
+import { resumeHref } from '../lib/resume';
+
+---
+
+<Base title="About" description="Background, skills, certifications and contact details for Michael Kelnar.">
+  <div class="wrap">
+    <header class="page-head">
+      <span class="crumb"><a href="/">~</a> <span>/</span> about</span>
+      <h1>About</h1>
+      <p>
+        I'm a {SITE.jobTitle} at {SITE.employer}, based in {SITE.location}. I do cybersecurity compliance
+        testing on embedded and connected devices, including EN 18031 evaluations under the EU Radio Equipment
+        Directive, for products used in healthcare and industrial environments. That means examining firmware,
+        communication protocols and hardware interfaces for vulnerabilities, then explaining what I find to
+        engineering teams.
+      </p>
+      <div class="actions">
+        {resumeHref && <a class="btn primary" href={resumeHref}>Resume ↗</a>}
+        <a class:list={['btn', { primary: !resumeHref }]} href={`mailto:${SITE.email}`}>Email me</a>
+        <a class="btn" href={SITE.linkedin} rel="me">LinkedIn ↗</a>
+        <a class="btn" href={SITE.github} rel="me">GitHub ↗</a>
+      </div>
+    </header>
+  </div>
+
+  <section class="block">
+    <div class="wrap grid2">
+      <div class="card">
+        <span class="label">./skills</span>
+        <h3>Toolkit</h3>
+        {SKILLS.map((s) => (
+          <div class="skill">
+            <span class="group">{s.group}</span>
+            <div class="tags">{s.items.map((i) => <span class="tag">{i}</span>)}</div>
+          </div>
+        ))}
+      </div>
+      <div class="card">
+        <span class="label">./credentials</span>
+        <h3>{CERTIFICATIONS.length > 0 ? 'Certifications & education' : 'Education'}</h3>
+        <ul class="kv">
+          {CERTIFICATIONS.map((c) => <li><span>{c.name}</span><span>{c.year}</span></li>)}
+          <li><span>B.S. Computer Science, Bradley University</span><span>2023</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="pgp">
+    <div class="wrap pgp">
+      <span class="label mono">./pgp</span>
+      <h2>Encrypted contact</h2>
+      <p>
+        Import the key with <code>curl -s https://michaelkelnar.com/pgp.asc | gpg --import</code> and check the
+        fingerprint matches before you send anything sensitive.
+      </p>
+      <Fingerprint />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .skill { margin-top: 18px; }
+  .group { display: block; font-family: var(--mono); font-size: 12px; color: var(--faint); margin-bottom: 8px; }
+  .pgp { padding-bottom: 32px; }
+  .pgp .label { font-size: 12px; color: var(--accent); display: block; margin-bottom: 14px; }
+  .pgp h2 { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
+  .pgp p { color: var(--muted); margin-top: 10px; max-width: 640px; }
+  .pgp code {
+    font-family: var(--mono); font-size: 0.82em; background: var(--bg-raised); border: 1px solid var(--line);
+    padding: 1px 6px; border-radius: 4px; color: var(--text); word-break: break-all;
+  }
+</style>

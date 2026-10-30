@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProjectList from '../../components/ProjectList.astro';
+import { getProjects } from '../../lib/content';
+
+const projects = await getProjects();
+---
+
+<Base title="Projects" description="Security assessments, tooling and research by Michael Kelnar.">
+  <div class="wrap">
+    <header class="page-head">
+      <span class="crumb"><a href="/">~</a> <span>/</span> projects</span>
+      <h1>Projects</h1>
+      <p>Assessments, tooling and research. Client work is described at a level that respects confidentiality.</p>
+    </header>
+    <div class="list"><ProjectList projects={projects} /></div>
+  </div>
+</Base>
+
+<style>
+  .list { padding-bottom: 96px; }
+</style>
